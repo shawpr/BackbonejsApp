@@ -1,0 +1,25 @@
+{
+  "name": "excercise3",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Gruntfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Pragati Shaw",
+  "license": "ISC",
+  "dependencies": {
+    "backbone": "^1.4.0",
+    "bootstrap": "~3.3",
+    "connect": "^3.7.0",
+    "glyphicons": "^0.2.0",
+    "grunt": "^1.0.4",
+    "grunt-contrib-csslint": "^2.0.0",
+    "grunt-contrib-jshint": "^2.1.0",
+    "grunt-contrib-watch": "^1.1.0",
+    "jquery": "^3.4.1",
+    "requirejs": "^2.3.6",
+    "serve-static": "^1.14.1"
+  }
+}

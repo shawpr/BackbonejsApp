@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Details Main Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/userList.css">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script data-main="js/main" src="node_modules/requirejs/require.js"></script>
+    <script src="node_modules/glyphicons/glyphicons"></script>
+</head>
+<body>
+<body>
+
+<div class="container">
+    <div class="page"></div>
+</div>
+
+
+<!--user list template-->
+<script type="text/template" id="userListTemplate">
+    <div>
+        <h2 class="text-center">User List</h2>
+        <table class="table table-hover">
+            <thead>
+            <tr>
+                <th>Name</th>
+                <th>Username</th>
+                <th>email</th>
+                <th>address</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% _.each(users, function(user) { %>
+            <tr>
+                <td><a class="userLink" row-index="<%=user.attributes.id %>"><%=user.attributes.name %></a></td>
+                <td><%=user.attributes.username %></td>
+                <td><a><%=user.attributes.email %></a></td>
+                <td><%=user.attributes.address.street %> ,<%=user.attributes.address.suite %> ,<%=user.attributes.address.city %> ,<%=user.attributes.address.zipcode %></td>
+            </tr>
+            <% }); %>
+            </tbody>
+        </table>
+    </div>
+</script>
+
+<!--user details template-->
+<script type="text/template" id="userDetailsTemplate">
+    <div class="col-md-6 col-md-offset-3">
+        <div class="panel panel-default">
+            <div class="panel-heading"><span>User Details</span> <span class="pull-right">Bookmark this page: <a class="glyphicon glyphicon-bookmark savePageLink"></a></p></span></div>
+            <div class="panel-body">
+                <p><h3><%=userDetail.attributes.name %></h3></p>
+                <p>
+                    <p><span class="glyphicon glyphicon-briefcase"></span><span> <%=userDetail.attributes.company.name %> </span></p>
+                    <p><span class="glyphicon glyphicon-globe"></span><span> <%=userDetail.attributes.website %> </span></p>
+                    <p><span class="glyphicon glyphicon-envelope"></span><span> <%=userDetail.attributes.email %> </span></p>
+                    <p><span class="glyphicon glyphicon-home"></span><span> <%=userDetail.attributes.address.street %> , <%=userDetail.attributes.address.suite %> , <%=userDetail.attributes.address.city %> , <%=userDetail.attributes.address.zipcode %></span></p>
+                    <p><span class="glyphicon glyphicon-phone"></span><span> <%=userDetail.attributes.phone %> </span></p>
+                </p>
+            </div>
+        </div>
+        <div>
+            <button id="navPreviousLink" type="button" class="btn btn-primary btn-sm">Go back</button>
+        </div>
+    </div>
+</script>
+</body>
+
+</body>
+</html>
